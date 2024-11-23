@@ -22,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DIRNAME = "../output"
+DIRNAME = os.getenv("DIR", "../output")
 
 converter = Doc2Pdf(DIRNAME)
 

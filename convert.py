@@ -3,8 +3,8 @@ import subprocess
 import os
 import hashlib
 
-HOST = os.getenv("HOST")
-PORT = os.getenv("PORT")
+HOST = os.getenv("HOST", "127.0.0.1")
+PORT = os.getenv("PORT", "2003")
 
 class Doc2Pdf():
     def __init__(self, output_dir):

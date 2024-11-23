@@ -3,6 +3,9 @@ import subprocess
 import os
 import hashlib
 
+HOST = os.getenv("HOST")
+PORT = os.getenv("PORT")
+
 class Doc2Pdf():
     def __init__(self, output_dir):
         self.output_dir = os.path.join(os.getcwd(), output_dir)
@@ -10,7 +13,9 @@ class Doc2Pdf():
     def convert_single(self, file_path: str, output_name: str):
         output = os.path.join(self.output_dir, output_name)
         try:
-            subprocess.run(["unoconvert", "--host-location", "remote", file_path, output], check=True)
+            if not HOST or not PORT:
+                raise RuntimeError("HOST or PORT not set")
+            subprocess.run(["unoconvert", "--host", HOST, "--port", PORT ,"--host-location", "remote", file_path, output], check=True)
             return output
         except:
             raise RuntimeError("Failed to convert the file")

@@ -18,3 +18,7 @@ Other repositories:
 - `pip install -r requirements.txt` to install the dependencies
 - `make` to run the server
 - `make docker` to build and run the docker image
+
+## Running the stack
+
+To run the whole stack, use this [Dockerfile](https://github.com/Doc2PDF/deployments/blob/main/docker-compose.yaml).

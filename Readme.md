@@ -1,6 +1,6 @@
 # Doc2Pdf
 
-The is the main service which utilizes the `unoserver` to convert the doc files to word files.
+The is the main service which utilizes the `unoserver` to convert the doc files to pdf files.
 
 There are 2 routes:
 - /convert - which takes a doc file and converts it to pdf
